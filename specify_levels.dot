@@ -1,0 +1,30 @@
+digraph specify_levels {
+        label="specify levels"
+        node [ shape=doublecircle style=filled fillcolor=yellow ]
+        L0 [ label = "LR_0" ]
+        L3 [ label = "LR_3" ]
+        L4 [ label = "LR_4" ]
+        L8 [ label = "LR_8" ]
+        node [ shape=circle style="" ]
+        L1 [ label = "LR_1" ]
+        L2 [ label = "LR_2" ]
+        L5 [ label = "LR_5" ]
+        L6 [ label = "LR_6" ]
+        L7 [ label = "LR_7" ]
+        {rank=same L1,L2}
+        {rank=same L3,L4,L5,L6}
+        L0 -> L2 [ label = "SS(B)" ]
+        L0 -> L1 [ label = "SS(S)" ]
+        L1 -> L3 [ label = "S($end)" ]
+        L2 -> L6 [ label = "SS(b)" ]
+        L2 -> L5 [ label = "SS(a)" ]
+        L2 -> L4 [ label = "S(A)" ]
+        L5 -> L7 [ label = "S(b)" ]
+        L5 -> L5 [ label = "S(a)" ]
+        L6 -> L6 [ label = "S(b)" ]
+        L6 -> L5 [ label = "S(a)" ]
+        L7 -> L8 [ label = "S(b)" ]
+        L7 -> L5 [ label = "S(a)" ]
+        L8 -> L6 [ label = "S(b)" ]
+        L8 -> L5 [ label = "S(a)" ]
+}
